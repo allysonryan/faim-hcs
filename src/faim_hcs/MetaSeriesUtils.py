@@ -189,7 +189,9 @@ def montage_grid_image_YX(data):
 def verify_integrity(field_metadata: list[dict]):
     metadata = field_metadata[0]
     for fm in field_metadata:
-        assert fm == metadata, "Metadata is not consistent across fields."
+        assert (
+            fm == metadata
+        ), f"Metadata is inconsistent across fields: {fm} <=> {metadata}."
 
     return metadata
 
