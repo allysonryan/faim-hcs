@@ -125,7 +125,7 @@ def _list_dataset_files(
     for root, _, filenames in os.walk(root_dir):
         m_root = root_re.fullmatch(root)
         if m_root:
-            for f in filenames:
+            for f in sorted(filenames):
                 m_filename = filename_re.fullmatch(f)
                 if m_filename:
                     row = m_root.groupdict()
